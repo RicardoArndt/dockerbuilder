@@ -1,0 +1,15 @@
+.logs {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.logs > ul {
+  background-color: black;
+  color: green;
+  width: 90vw;
+  padding: 50px;
+  border: 1px solid #DDD;
+  max-height: 300px;
+  overflow: scroll;
+}

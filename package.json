@@ -1,0 +1,25 @@
+{
+  "name": "dockerbuilder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node app.js",
+    "start:socket": "node app-socket.js"
+  },
+  "author": "Ricardo Guilherme Arndt",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "find-free-port": "^2.0.0",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "jest-when": "^3.5.0"
+  }
+}
