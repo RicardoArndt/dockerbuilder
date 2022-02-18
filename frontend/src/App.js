@@ -44,6 +44,10 @@ function App(props) {
     setState({ ...state, apps });
   }
 
+  const updateTable = () => {
+    getAllApps().then(res => setState({ ...state, apps: res.data }));
+  }
+
   const handleClickSave = (row, index) => {
     saveApp(row).then(() => {
       const apps = [...state.apps];
@@ -130,7 +134,6 @@ function App(props) {
                         <SaveIcon />
                       </IconButton>
                   }
-                  
                 </TableCell>
               </TableRow>
             ))}
@@ -139,7 +142,8 @@ function App(props) {
       </TableContainer>
 
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <Button variant="outlined" style={{ margin: "20px" }} onClick={(event) => handleClickAdd(event)}>Add</Button>
+        <Button variant="outlined" style={{ margin: "20px" }} onClick={(_) => updateTable()}>Update Table</Button>
+        <Button variant="outlined" style={{ margin: "20px" }} onClick={(_) => handleClickAdd()}>Add</Button>
       </div>
 
       { state.logs.length 
