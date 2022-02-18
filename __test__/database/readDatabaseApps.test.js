@@ -1,5 +1,7 @@
 "use strict";
 
+const pathUtils = require("path");
+
 jest.mock("util");
 jest.mock("fs");
 
@@ -26,7 +28,7 @@ describe("appDao", () => {
 
         await database.readDatabaseAsync();
 
-        expect(readFileAsync).toHaveBeenCalledWith("/Users/ricardoarndt/Documents/Projects/DockerBuilder/apps.data");
+        expect(readFileAsync).toHaveBeenCalledWith(pathUtils.resolve(__dirname, "../../", "apps.data"));
     });
 
     test("should return", async () => {
